@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1zNrvELw0aAP6g3z6GPoXTXRNqBkaDYJt
 """
 
-!pip install wandb
 
 from numpy.core.multiarray import ndarray
 import wandb
@@ -40,7 +39,7 @@ class neural_network:
     # separate the shuffled array back into train_data and train_label
     train_data = train_data_label[:, :-1]
     train_labels = train_data_label[:, -1]
-
+    train_labels = train_labels.astype(np.int32)
     self.test_data = np.reshape(test_data/255.0,(len(test_data),test_data.shape[1]**2))
     self.test_labels =test_labels 
 
@@ -824,7 +823,7 @@ parser.add_argument('-we', '--wandb_entity', type=str, default='myname', help='W
 parser.add_argument('-d', '--dataset', type=str, default='fashion_mnist', choices=['mnist', 'fashion_mnist'], help='Dataset to use for training')
 parser.add_argument('-e', '--epochs', type=int, default=10, help='Number of epochs to train neural network.')
 parser.add_argument('-b', '--batch_size', type=int, default=16, help='Batch size used to train neural network.')
-parser.add_argument('-l', '--loss', type=str, default='cross_entropy', choices=['mean_squared_error', 'cross_entropy'], help='Loss function used to train neural network.')
+parser.add_argument('-l', '--loss', type=str, default='cross_entropy', choices=['MSE', 'cross_entropy'], help='Loss function used to train neural network.')
 parser.add_argument('-o', '--optimizer', type=str, default='nadam', choices=['sgd', 'momentum', 'nag', 'rmsprop', 'adam', 'nadam'], help='Optimizer used to train neural network.')
 parser.add_argument('-lr', '--learning_rate', type=float, default=0.0001, help='Learning rate used to optimize model parameters')
 parser.add_argument('-m', '--momentum', type=float, default=0.9, help='Momentum used by momentum and nag optimizers.')
@@ -864,14 +863,16 @@ config_default={
 if (args.dataset=="mnist"):
   (train_data, train_labels), (test_data, test_labels) = mnist.load_data()
 
-wandb.init(config=config_default)
-config = wandb.config
+
+
 
 Net = neural_network(train_data,train_labels,test_data,test_labels)
 
 # Fit the model with perticular configuration
-wandb.init(project = args.wandb_project ,name =args.wandb_entity) 
+wandb.init(project = args.wandb_project ,name =args.wandb_entity,config=config_default)
+config = wandb.config 
 Net.train(epoch=config.epoch, hidden_layers=config.hidden_layers, size_of_layer=config.size_of_layer, batch_size=config.batch_size, activation=config.activation, optimizer=config.optimizer, weight_init=config.weight_init, learning_rate=config.learning_rate, weight_decay=config.weight_decay,momentum=args.momentum,beta=args.beta,beta1=args.beta1,beta2=args.beta2,epsilon=args.epsilon,loss=args.loss)
+
 
 # generate labels for test_data
 y_pred=Net.predict(Net.test_data)  
@@ -887,6 +888,8 @@ import plotly.graph_objs as go
 cm = confusion_matrix(y_true, y_pred)
 classes = ["T-Shirt/Top","Trouser","Pullover","Dress","Shirts","Sandal","Coat","Sneaker","Bag","Ankle boot"]
 
+if(args.dataset=='mnist'):
+  classes = ["0","1","2","3","4","5","6","7","8","9"]
 
 
 # Calculate the percentages
