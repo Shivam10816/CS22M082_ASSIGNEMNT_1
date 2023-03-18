@@ -125,7 +125,7 @@ The codes are organized as follows:
 
 | Question | Location | Function | 
 |----------|----------|----------|
-| Question 1 | [Question-1]((https://github.com/Shivam10816/cs6910_assignment1/blob/main/Q1.ipynb)) | Logging Representative Images | 
+| Question 1 | [Question-1](https://github.com/Shivam10816/cs6910_assignment1/blob/main/Q1.ipynb) | Logging Representative Images | 
 | Question 2 | [Question-2](https://github.com/Shivam10816/cs6910_assignment1/blob/main/neural_network.py) | Feedforward Architecture |
 | Question 3 | [Question-3](https://github.com/Shivam10816/cs6910_assignment1/blob/main/neural_network.py) | Complete Neural Network |
 | Question 4 | [Question-4](https://github.com/Shivam10816/cs6910_assignment1/blob/main/neural_network.py) | Hyperparameter sweeps using `wandb` |
