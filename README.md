@@ -125,9 +125,8 @@ The codes are organized as follows:
 
 | Question | Location | Function | 
 |----------|----------|----------|
-| Question 1 | [Question-1](https://github.com/sowmyamanojna/CS6910-Deep-Learning-Assignment-1/blob/main/Question-1.py) | Logging Representative Images | 
-| Question 2 | [Question-2](https://github.com/sowmyamanojna/CS6910-Deep-Learning-Assignment-1/blob/f266f73a9a28c20f3dc26c1902c9aa64bf142912/network.py#L67) | Feedforward Architecture |
-| Question 3 | [Question-3](https://github.com/sowmyamanojna/CS6910-Deep-Learning-Assignment-1/blob/main/Question-3.py) | Complete Neural Network |
-| Question 4 | [Question-4](https://github.com/sowmyamanojna/CS6910-Deep-Learning-Assignment-1/blob/main/Question-4.py) | Hyperparameter sweeps using `wandb` |
-| Question 7 | [Question-7](https://github.com/sowmyamanojna/CS6910-Deep-Learning-Assignment-1/blob/main/Question-7.py) | Confusion Matrix logging for the best Run | 
-| Question 10 | [Question-10](https://github.com/sowmyamanojna/CS6910-Deep-Learning-Assignment-1/blob/main/Question-10.py) | Hyperparameter configurations for MNIST data (Q10) | 
+| Question 1 | [Question-1]((https://github.com/Shivam10816/cs6910_assignment1/blob/main/Q1.ipynb)) | Logging Representative Images | 
+| Question 2 | [Question-2](https://github.com/Shivam10816/cs6910_assignment1/blob/main/neural_network.py) | Feedforward Architecture |
+| Question 3 | [Question-3](https://github.com/Shivam10816/cs6910_assignment1/blob/main/neural_network.py) | Complete Neural Network |
+| Question 4 | [Question-4](https://github.com/Shivam10816/cs6910_assignment1/blob/main/neural_network.py) | Hyperparameter sweeps using `wandb` |
+| Question 10 | [Question-10](https://github.com/Shivam10816/cs6910_assignment1/blob/main/train.py) | Hyperparameter configurations for MNIST data (Q10) | 
