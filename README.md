@@ -118,7 +118,7 @@ wandb.log({'confusion_matrix': (fig)})
 
 ## Configuration for train.py
 ```Python
-python train.py -wp CS22M082 -we Exp1 -d mnist -e 10 -b 16 -l cross_entropy -o nadam -lr 0.001 -w_d 0.005 -w_i Xavier -nhl 4 -sz 5 -a tanh 
+python train.py -wp 'Assignment1(MSE vs cross)' -we 'Exp2' -e 10 -b 16 -l 'MSE' -o 'nadam' -lr 0.001 -w_d 0.005 -w_i 'Xavier' -nhl 5 -sz 128  -a 'tanh'  
 ```
 ---
 The codes are organized as follows:
