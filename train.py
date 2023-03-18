@@ -307,12 +307,25 @@ class neural_network:
     W_theta , b_theta,H_theta,A_theta =[],[],[],[]
     
     L =len(A)
+    
+    w_2 =0;
+    
+    # L2 regularization
+    for M in self.W:
+      w_2+=sum(M[i][j] * M[i][j] for i in range(M.shape[0]) for j in range(M.shape[1]))
+    
+    w_2/=len(self.W);
 
     #------------------------Check if loss is cross_entropy---------------------
     if(self.loss=="cross_entropy"):
-      A_theta.append(self.cross_entropy_loss_derivative(y_hat,Y))
+      lw =self.cross_entropy_loss_derivative(y_hat,Y)
+      lw+= (self.reg/2)*w_2
+      A_theta.append(lw)
     if(self.loss=="MSE"):
-      A_theta.append(self.mean_squared_error_derivative(y_hat,Y))
+
+      lw =self.mean_squared_error_derivative(y_hat,Y)
+      lw+= (self.reg/2)*w_2
+      A_theta.append(lw)
     
     #-------------------------W_theta , b_theta calculation---------------------
 
