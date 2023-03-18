@@ -1,7 +1,7 @@
 # CS6910 Assignment 1
 Assignment 1 submission for the course CS6910 Fundamentals of Deep Learning.
 
-Team members: N Sowmya Manojna (BE17B007), Shubham Kashyapi (MM16B027)
+Student Information: Shivam Kharat (CS22M082)
 
 ---
 
