@@ -7,20 +7,8 @@ Original file is located at
     https://colab.research.google.com/github/Shivam10816/CS22M082_ASSIGNEMNT_1/blob/main/neural_network.ipynb
 """
 
-!pip install wandb
 
-# wandb.init(project = "Assignment 1_new" ,name = "Question 1")
-# fig,axs = plt.subplots(2,5,figsize=(20,6))
-# axs =axs.flatten()
-# images=[]
-# for i in range(0,10):
-#   index =random.choice(np.where(train_labels==i)[0])
-  
-#   axs[i].imshow(train_data[index],cmap="gray")
-#   axs[i].set_title(titles[i])
-#   Img = wandb.Image(train_data[index],caption=[titles[i]])
-#   images.append(Img)
-# wandb.log({"examples":images})
+
 
 """# **Question 2/3**"""
 
