@@ -54,7 +54,7 @@ class neural_network:
     
   #------Train function to fit neural network with different parameter----------
 
-  def train(self,weight_init="random",hidden_layers=1,size_of_layer=4,activation="sigmoid",optimizer="sgd",learning_rate=0.1,epoch=1,batch_size=4,weight_decay=0.0,loss="cross_entropy",momentum=0.5,beta =0.5,beta1=0.5,beta2=0.5,epsilon=0.000001):
+  def train(self,weight_init="Xavier",hidden_layers=5,size_of_layer=128,activation="tanh",optimizer="nadam",learning_rate=0.001,epoch=10,batch_size=16,weight_decay=0.005,loss="cross_entropy",momentum=0.9,beta =0.9,beta1=0.9,beta2=0.999,epsilon=0.000001):
     
 
     #-----------------------Weight Initialization-------------------------------
@@ -312,9 +312,9 @@ class neural_network:
     
     # L2 regularization
     for M in self.W:
-      w_2+=sum(M[i][j] * M[i][j] for i in range(M.shape[0]) for j in range(M.shape[1]))
+      w_2+=np.sum(np.square(M))
     
-    w_2/=len(self.W);
+    w_2/=len(self.train_data);
 
     #------------------------Check if loss is cross_entropy---------------------
     if(self.loss=="cross_entropy"):
