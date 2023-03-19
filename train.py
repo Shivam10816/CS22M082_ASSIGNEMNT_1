@@ -417,7 +417,7 @@ class neural_network:
         validation_loss=self.mean_squared_error(y_hat,self.validation_label)
         train_loss= self.cross_entropy(train_hat,self.train_label)
 
-      train_acc = self.accuracy(self.validation_data,self.validation_label)
+      train_acc = self.accuracy(self.train_data,self.train_label)
       validation_accuracy =self.accuracy(self.validation_data,self.validation_label)
 
       #-------Update values To Wandb------
@@ -486,7 +486,7 @@ class neural_network:
         validation_loss=self.mean_squared_error(y_hat,self.validation_label)
         train_loss= self.cross_entropy(train_hat,self.train_label)
 
-      train_acc = self.accuracy(self.validation_data,self.validation_label)
+      train_acc = self.accuracy(self.train_data,self.train_label)
       validation_accuracy =self.accuracy(self.validation_data,self.validation_label)
 
       #------------------------Update to Wandb----------------------------------
@@ -556,7 +556,7 @@ class neural_network:
         validation_loss=self.mean_squared_error(y_hat,self.validation_label)
         train_loss= self.cross_entropy(train_hat,self.train_label)
 
-      train_acc = self.accuracy(self.validation_data,self.validation_label)
+      train_acc = self.accuracy(self.train_data,self.train_label)
       validation_accuracy =self.accuracy(self.validation_data,self.validation_label)
 
       #------------------------Update to Wandb----------------------------------
@@ -628,7 +628,7 @@ class neural_network:
         validation_loss=self.mean_squared_error(y_hat,self.validation_label)
         train_loss= self.cross_entropy(train_hat,self.train_label)
 
-      train_acc = self.accuracy(self.validation_data,self.validation_label)
+      train_acc = self.accuracy(self.train_data,self.train_label)
       validation_accuracy =self.accuracy(self.validation_data,self.validation_label)
       
       #------------------------Update to Wandb----------------------------------
@@ -711,7 +711,7 @@ class neural_network:
         validation_loss=self.mean_squared_error(y_hat,self.validation_label)
         train_loss= self.cross_entropy(train_hat,self.train_label)
 
-      train_acc = self.accuracy(self.validation_data,self.validation_label)
+      train_acc = self.accuracy(self.train_data,self.train_label)
       validation_accuracy =self.accuracy(self.validation_data,self.validation_label)
 
       #------------------------Update values to Wandb----------------------------------
@@ -791,7 +791,7 @@ class neural_network:
         validation_loss=self.mean_squared_error(y_hat,self.validation_label)
         train_loss= self.cross_entropy(train_hat,self.train_label)
 
-      train_acc = self.accuracy(self.validation_data,self.validation_label)
+      train_acc = self.accuracy(self.train_data,self.train_label)
       validation_accuracy =self.accuracy(self.validation_data,self.validation_label)
 
       #------------------------Update to Wandb----------------------------------
